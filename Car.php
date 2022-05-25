@@ -1,48 +1,24 @@
 <?php
 
-class Car
+require_once("Vehicle.php");
+
+// Classe Carro
+class Car extends Vehicle
 {
-    public $usuario;
-    public $nome;
-    public $cav;
+    private $doors;
 
-    public function getUsuario()
+    public function setDoors($doors)
     {
-        return $this->usuario;
+        $this->doors = $doors;
     }
 
-    public function setUsuario($usuario)
+    public function getDoors()
     {
-        $this->usuario = $usuario;
+        return $this->doors;
     }
 
-    public function getNome()
+    public function getBrand()
     {
-        return $this->nome;
+        return $this->brand;
     }
-
-    public function setNome($nome)
-    {
-        $this->nome = $nome;
-    }
-
-    public function getCav()
-    {
-        return $this->cav;
-    }
-
-    public function setCav(int $cav)
-    {
-        $this->cav = $cav;
-    }
-
-
 }
-
-$pessoa = new Car();
-
-$pessoa->setUsuario("Matheus");
-$pessoa->setNome("Corsa");
-$pessoa->setCav(462);
-
-echo "Olá {$pessoa->getUsuario()}, seu carro é o {$pessoa->getNome()} e ele tem {$pessoa->getCav()} cavalos";
